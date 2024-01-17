@@ -8,9 +8,9 @@ warnings.filterwarnings('ignore')
 
 app = Flask(__name__)
 ca_loaded = joblib.load('./static/ca.joblib')
-# pso_loaded = joblib.load('./static/pso.joblib')
-# iwo_loaded = joblib.load('./static/iwo.joblib')
-# gbo_loaded = joblib.load('./static/gbo.joblib')
+pso_loaded = joblib.load('./static/pso.joblib')
+iwo_loaded = joblib.load('./static/iwo.joblib')
+gbo_loaded = joblib.load('./static/gba.joblib')
 @app.route('/')
 def home():
     return render_template('index.html')

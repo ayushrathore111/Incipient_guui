@@ -82,4 +82,4 @@ res= np.mean(gb)
 print(f"Optimal solution found at x = {gbest}, with a fitness value of {res} of ADABOOST MOdel")
 
 import joblib
-joblib.dump()
+joblib.dump(rf,"./static/pso.joblib")

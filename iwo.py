@@ -98,3 +98,6 @@ kge = 1 - np.sqrt((np.corrcoef(y_test, y_pred)[0, 1]- 1)**2 + (np.std(y_pred) / 
 print(r2,rmse,mse,mae,rrse,rae,vaf,kge)
 errors=pd.DataFrame([r2,rmse,mse,mae,rrse,rae,vaf,kge])
 errors.to_excel("metr.xlsx")
+
+import joblib
+joblib.dump(bagging_classifier,"./static/iwo.joblib")
