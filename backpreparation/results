@@ -1,0 +1,54 @@
+// Incipient motion results:
+Cultural Algorithm
+1. BR:
+Best Individual: [0 1 1 0 1 0 1]
+Best Fitness: 0.9761904761904762
+2. Knn:
+Best Individual: [0 0 0 0 1 1 1]
+Best Fitness: 0.35714285714285715
+3. ETR: 
+at 100 iterations                              at 50 iterations
+Best Individual: [0 0 1 0 1 0 1]                 Best Individual: [1 1 1 1 1 1 1]
+Best Fitness: 1.0                                best fit: 1.0
+4. Adaboost:
+Best Individual: [0 1 0 1 1 0 1]
+Best Fitness: 0.27380952380952384
+5. DTR
+Best Individual: [1 1 1 0 1 1 0]
+Best Fitness: 1.0
+
+
+Particle swarm optimizaiton:
+1. adaboost: 0.7150841553086437
+2. Bagging: 0.6874813817264791
+3. ExtraTree: 0.8956381529474459
+4. KNN: 0.5848893594183862
+5. linear: 0.5472948814875079
+6. gbr: 0.9582986753878461
+7. rf: 0.8790705585788342
+8. xgb: 0.9829845793431269
+9. dtr: 0.7915802947094207
+
+
+Invasive optimization algorithm:
+base regression is used : Decision tree regression with models below: 
+# DTR: 0.9032072946897457
+bagging: 0.905735986
+adaboost: 0.8510987393697459
+gBR: 0.906735086328738
+RF: 0.9033294297913226
+xgb: 0.8213601380134741
+knn: 0.38473416012273587
+lr: 0.8775149997033976
+etr: 0.8394273071165135
+
+Gradient based algorithm: 
+knn: 0.3205404213898778
+AR: 0.9450357795044724
+BR: 0.9190151127597834
+ETR: 0.918914436641502
+lr: 0.299485535818633
+rf: 0.8975492701697664
+xgb: 0.9839050591193977
+gbr: 0.9626975093852789
+
