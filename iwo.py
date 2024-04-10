@@ -40,7 +40,7 @@ def invasive_weed_optimization(X_train, y_train, population_size, generations):
             )
 
             # Use a simple Decision Tree classifier as an example
-            model = DecisionTreeRegressor()
+            model = KNeighborsRegressor()
             model.fit(X_train, y_train)
             y_pred = model.predict(X_test)
             acc=r2_score(y_test,y_pred)
@@ -73,7 +73,7 @@ selected_features = invasive_weed_optimization(X_train, y_train, population_size
 
 # Apply bagging with the selected features
 base_classifier = DecisionTreeRegressor()
-bagging_classifier = DecisionTreeRegressor()
+bagging_classifier = KNeighborsRegressor()
 
 X_selected = X_train.iloc[:, boolean_to_index(selected_features == 1)]
 X_train_split, X_test_split, y_train_split, y_test_split = train_test_split(
@@ -100,4 +100,4 @@ errors=pd.DataFrame([r2,rmse,mse,mae,rrse,rae,vaf,kge])
 errors.to_excel("metr.xlsx")
 
 import joblib
-joblib.dump(bagging_classifier,"./static/iwo.joblib")
+joblib.dump(bagging_classifier,"./static/iwo_knn.joblib")

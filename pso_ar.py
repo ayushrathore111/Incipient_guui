@@ -16,7 +16,7 @@ y= df.iloc[:,-1]
 
 X_train,X_test,y_train,y_test= train_test_split(X,y,test_size=0.2,random_state=0)
 # Define the objective function\
-rf = AdaBoostRegressor()
+rf = BaggingRegressor()
 rf.fit(X_train, y_train)
 y_pred = rf.predict(X_test)
 dc = pd.DataFrame(y_pred) 
@@ -82,4 +82,4 @@ res= np.mean(gb)
 print(f"Optimal solution found at x = {gbest}, with a fitness value of {res} of ADABOOST MOdel")
 
 import joblib
-joblib.dump(rf,"./static/pso.joblib")
+joblib.dump(rf,"./static/pso_br.joblib")

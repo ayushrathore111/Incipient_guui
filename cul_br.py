@@ -1,5 +1,3 @@
-#cultural algorithm with knn
-
 import numpy as np
 from sklearn.datasets import load_iris
 from xgboost import XGBClassifier
@@ -15,7 +13,7 @@ from sklearn.metrics import accuracy_score,r2_score,mean_absolute_error,mean_squ
 
 # Define the fitness function using KNN
 def fitness_function(X_train, y_train,X_test,ytest, solution, n_neighbors):
-    knn = RandomForestRegressor()
+    knn = DecisionTreeRegressor()
     knn.fit(X_train * solution, y_train)
     y_pred = knn.predict(X_test * solution)
     return r2_score(ytest, y_pred)
@@ -36,10 +34,6 @@ y = df['tb']
 from sklearn import preprocessing
 from sklearn import utils
 
-#convert y values to categorical values
-# lab = preprocessing.LabelEncoder()
-# y_transformed = lab.fit_transform(y)
-# print(y_transformed)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
 df = pd.DataFrame(y_test)
 print(y_test)
@@ -81,7 +75,7 @@ for generation in range(max_generations):
 # Select the best individual
 best_individual = population[np.argmax(fitness_values)]
 # best_fitness = fitness_function(X_train, y_train,X_test,y_test, best_individual, n_neighbors)
-knn = RandomForestRegressor()
+knn = DecisionTreeRegressor()
 knn.fit(X_train * best_individual, y_train)
 y_pred = knn.predict(X_test * best_individual)
 dc = pd.DataFrame(y_pred)
@@ -100,4 +94,4 @@ errors=pd.DataFrame([r2,rmse,mse,mae,rrse,rae,vaf,kge])
 errors.to_excel("metr.xlsx")
 
 import joblib
-joblib.dump(knn,"./static/ca.joblib")
+joblib.dump(knn,"./static/ca_dtr.joblib")
